@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+
 
 
 @Component({
@@ -11,4 +11,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 })
 export class AppComponent {
   title = 'Mat';
+  constructor (public dialog: MatDialog){}
+
+  openDialog(){
+    this.dialog.open(DialogBoxComponent)
+  }
 }
