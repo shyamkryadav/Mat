@@ -13,7 +13,11 @@ export class AppComponent {
   title = 'Mat';
   constructor (public dialog: MatDialog){}
 
-  openDialog(){
-    this.dialog.open(DialogBoxComponent)
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogBoxComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
